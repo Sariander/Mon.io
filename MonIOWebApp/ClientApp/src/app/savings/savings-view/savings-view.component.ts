@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./savings-view.component.scss']
 })
 export class SavingsViewComponent implements OnInit {
+  savingsCategories = ['Rainy Day', 'Car Work', 'Spending'];
+  constructor() {
 
-  constructor() { }
+  }
 
   ngOnInit() {
   }
