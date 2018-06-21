@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'bottom-nav',
@@ -18,7 +21,12 @@ export class BottomNavComponent implements OnInit {
     { text: "Reports", index: 4, icon: "toc", routeName: "reports" }
   ]
 
-  constructor(private _router: Router) {
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  .pipe(
+    map(result => result.matches)
+  );
+
+  constructor(private _router: Router, private breakpointObserver: BreakpointObserver) {
     _router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
         var navEnd : NavigationEnd = val;

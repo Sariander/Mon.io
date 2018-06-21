@@ -3,14 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { SavingsRoutingModule } from './savings-routing.module';
 import { SavingsViewComponent } from './savings-view/savings-view.component';
-import { MatListModule, MatCardModule } from '@angular/material';
+import { MatListModule, MatCardModule, MatGridListModule } from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
     SavingsRoutingModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatGridListModule
   ],
   declarations: [SavingsViewComponent]
 })

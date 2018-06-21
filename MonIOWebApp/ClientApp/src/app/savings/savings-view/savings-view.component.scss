@@ -1,23 +1,21 @@
-@import '~@angular/material/theming';
-
 .home-card {
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
     margin-bottom: 10px;
     min-width: 200px;
-    width: 65%;
-}
+    width: 75%;
+  }
 
 @media only screen and (max-width: 1800px){
     .home-card {
-        width: 55%;
+        width: 65%;
     }
 }
 
 @media only screen and (max-width: 1260px){
     .home-card {
-        width: 65%;
+        width: 75%;
     }
 }
 
@@ -27,28 +25,24 @@
     }
 }
 
-@media only screen and (max-width: 768px){
-    .home-card {
-        margin-top: 0px;
-        width: 100%;
-        @include mat-elevation(0);
-    }
+.mat-divider {
+    margin-top: 10px;
 }
 
-.mat-card {
-    padding: 0px;
-}
-
-.mat-nav-list {
+.mat-list {
     padding-top: 0px;
 }
 
-.mat-list-text {
-    margin-left: 20%;
-    margin-right: auto;
-    min-width: 200px;
+.mat-grid-list {
+    margin-top: 23px;
 }
 
-.matSubtitle {
-    color: rgba(0, 0, 0, 0.54);
+.leftColumn {
+    position: absolute;
+    left: 0px;
+}
+
+.rightColumn {
+    position: absolute;
+    right: 0px;
 }

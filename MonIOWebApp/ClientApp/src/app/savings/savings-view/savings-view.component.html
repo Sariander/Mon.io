@@ -1,9 +1,24 @@
-<mat-card [class.mat-elevation-z0]="true" class="home-card">
-  <mat-nav-list>
-      <a mat-list-item *ngFor="let category of savingsCategories">
-          <h3 matLine>{{category}}</h3>
-          <h3 matLine matCardSubtitle>{{ 0 | currency }}</h3>
-          <mat-divider *ngIf="!last"></mat-divider>
-      </a>
-  </mat-nav-list>
-</mat-card>
+<mat-list>
+    <mat-card *ngFor="let category of savingsCategories" class="home-card">
+        <mat-grid-list cols="2" rowHeight="29px">
+            <mat-grid-tile>
+                <span matCardTitle [ngClass]="'leftColumn'">{{category.name}}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span matCardTitle [ngClass]="'rightColumn'">{{ category.value | currency }}</span>
+            </mat-grid-tile>
+        </mat-grid-list>
+
+        <mat-divider></mat-divider>
+        <mat-grid-list cols="2" rowHeight="35px">
+            <a *ngFor="let detail of category.details | slice:start:end">
+                <mat-grid-tile>
+                    <span [ngClass]="'leftColumn'">{{ detail.year }}</span>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <span matCardSubtitle [ngClass]="'rightColumn'">{{ detail.value | currency }}</span>
+                </mat-grid-tile>
+            </a>
+        </mat-grid-list>
+    </mat-card>
+</mat-list>
