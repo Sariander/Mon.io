@@ -1,0 +1,49 @@
+.home-card {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    min-width: 200px;
+    width: 75%;
+  }
+
+@media only screen and (max-width: 1800px){
+    .home-card {
+        width: 65%;
+    }
+}
+
+@media only screen and (max-width: 1260px){
+    .home-card {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 920px){
+    .home-card {
+        width: 85%;
+    }
+}
+
+.mat-list {
+    padding-top: 0px;
+}
+
+.mat-grid-list {
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+.leftColumn {
+    position: absolute;
+    left: 0px;
+}
+
+.rightColumn {
+    position: absolute;
+    right: 0px;
+}
+
+.chevron {
+    fill: rgba(0, 0, 0, 0.5);;
+}

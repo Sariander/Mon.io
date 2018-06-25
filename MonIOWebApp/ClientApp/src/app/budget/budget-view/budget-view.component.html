@@ -1,5 +1,38 @@
-<p>
-  budget-view works!
-</p>
+<mat-list>
+  <mat-card class="home-card">
+    <mat-list>
+      <mat-list-item>
+        <span matCardTitle [ngClass]="'leftColumn'">Monthly Income</span>
+        <span matCardTitle [ngClass]="'rightColumn'">{{ 100 | currency }}</span>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+  <mat-card class="home-card">
+    <span *ngFor="let number of [0,1,2]">
+      <mat-grid-list cols="3" rowHeight="25px">
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+          <span matCardTitle [ngClass]="'leftColumn'">Pre-Tax Expense</span>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="2">
+          <svg class="rightColumn chevron" xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 18 18">
+            <path d="M7.5 4.5L6.44 5.56 9.88 9l-3.44 3.44L7.5 13.5 12 9z" />
+          </svg>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+          <span matCardSubtitle [ngClass]="'leftColumn'">{{ 10 | currency }}</span>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-divider *ngIf="number != 2"></mat-divider>
+    </span>
+  </mat-card>
+  <mat-card class="home-card">
+    <mat-list>
+      <mat-list-item>
+        <span matCardTitle [ngClass]="'leftColumn'">Remaining Income</span>
+        <span matCardTitle [ngClass]="'rightColumn'">{{ 70 | currency }}</span>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+</mat-list>
 data:
 <pre>id:{{budgetData.id}} testNumber:{{budgetData.sumExpense}}</pre>

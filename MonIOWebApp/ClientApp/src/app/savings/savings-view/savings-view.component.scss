@@ -25,6 +25,12 @@
     }
 }
 
+@media only screen and (max-width: 600px){
+    .webOnly {
+        display: none;
+    }
+}
+
 .mat-divider {
     margin-top: 10px;
 }

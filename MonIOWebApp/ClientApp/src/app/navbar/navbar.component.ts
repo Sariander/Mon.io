@@ -27,7 +27,6 @@ export class NavbarComponent implements OnInit {
     { text: "Reports", index: 4, icon: "toc", routeName: "reports" }
   ]
 
-  fillerNav = Array(5).fill(0).map((_, i) => `Nav Item ${i + 1}`);
   isOpen: Boolean = false;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)

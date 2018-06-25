@@ -1,6 +1,6 @@
 <mat-list>
     <mat-card *ngFor="let category of savingsCategories" class="home-card">
-        <mat-grid-list cols="2" rowHeight="29px">
+        <mat-grid-list [ngClass]="'savings-category'" cols="2" rowHeight="29px">
             <mat-grid-tile>
                 <span matCardTitle [ngClass]="'leftColumn'">{{category.name}}</span>
             </mat-grid-tile>
@@ -8,15 +8,14 @@
                 <span matCardTitle [ngClass]="'rightColumn'">{{ category.value | currency }}</span>
             </mat-grid-tile>
         </mat-grid-list>
-
-        <mat-divider></mat-divider>
-        <mat-grid-list cols="2" rowHeight="35px">
-            <a *ngFor="let detail of category.details | slice:start:end">
+        <mat-divider [ngClass]="'webOnly'" *ngIf="category.details.length > 0"></mat-divider>
+        <mat-grid-list [ngClass]="'webOnly'" *ngIf="category.details.length > 0" cols="2" rowHeight="35px">
+            <a *ngFor="let detail of category.details">
                 <mat-grid-tile>
-                    <span [ngClass]="'leftColumn'">{{ detail.year }}</span>
+                    <span [ngClass]="'leftColumn'">{{ detail.year == currentYear ? 'Current' : detail.year }}</span>
                 </mat-grid-tile>
                 <mat-grid-tile>
-                    <span matCardSubtitle [ngClass]="'rightColumn'">{{ detail.value | currency }}</span>
+                    <span [ngClass]="'rightColumn'">{{ detail.value | currency }}</span>
                 </mat-grid-tile>
             </a>
         </mat-grid-list>

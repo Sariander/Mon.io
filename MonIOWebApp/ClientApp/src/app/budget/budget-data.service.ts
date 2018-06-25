@@ -10,16 +10,16 @@ export class BudgetDataService {
   budgetData: Budget;
   _budgetData: BehaviorSubject<Budget>;
   constructor(private apiData : MockApiDataService) { 
+    this._budgetData = new BehaviorSubject<Budget>(new Budget);
     this.apiData.budgetViewData.subscribe(data => {
       console.log(data);
       if(data !== null || data !== undefined){
         this.budgetData = data;
-        this._budgetData = new BehaviorSubject<Budget>(data);
+        this._budgetData.next(data);
       }else{
         this.budgetData = new Budget;
-        this._budgetData = new BehaviorSubject<Budget>(new Budget);
+        this._budgetData.next(null);
       }
-      
     });
   }
 
