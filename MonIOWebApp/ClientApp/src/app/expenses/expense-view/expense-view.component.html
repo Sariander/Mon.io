@@ -1,3 +1,17 @@
-<p>
-  expense-view works!
-</p>
+<mat-card *ngFor="let category of expenseCategories" (click)="OnExpenseCategoryClick(category)" class="home-card income-card">
+  <mat-grid-list cols="5" rowHeight="30px">
+    <mat-grid-tile [colspan]="3" [rowspan]="1">
+      <span [ngClass]="'leftColumn'">{{category.name}}</span>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <span [ngClass]="'rightColumn'">{{category.totalExpense - category.currentExpense | currency:'USD':'symbol':'2.0'}} left</span>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="5" [rowspan]="1">
+      <mat-progress-bar
+      color="{{((category.currentExpense / category.totalExpense) * 100) | colorType}}"
+      [mode]="mode"
+      value="{{((category.currentExpense / category.totalExpense) * 100)}}">
+      </mat-progress-bar>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-card>

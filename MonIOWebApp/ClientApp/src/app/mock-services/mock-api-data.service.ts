@@ -22,8 +22,8 @@ export class MockApiDataService {
     //call fetches on our dataStore objects
     //(when we get an API)
     //test purposes only. Remove when service is created.
-    setTimeout(() => {this.loadHomeData(100, 100, 100)}, 2000);
-    setTimeout(() => {this.loadMockBudgetData()}, 2000);
+    setTimeout(() => {this.loadHomeData(100, 100, 100)}, 500);
+    setTimeout(() => {this.loadMockBudgetData()}, 500);
   }
 
   //instantiate our observables here

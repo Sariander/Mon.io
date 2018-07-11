@@ -12,3 +12,7 @@
     cursor: pointer;
     user-select: none;
 }
+
+.bottom-nav__action:not(:last-child) {
+    margin-right: 0px;
+}

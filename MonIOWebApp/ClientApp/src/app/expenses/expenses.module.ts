@@ -3,12 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { ExpensesRoutingModule } from './expenses-routing.module';
 import { ExpenseViewComponent } from './expense-view/expense-view.component';
+import { MatListModule, MatCardModule, MatGridListModule, MatIconModule, MatProgressBarModule } from '@angular/material';
+import { ColorTypePipe } from './color-type.pipe';
 
 @NgModule({
   imports: [
     CommonModule,
-    ExpensesRoutingModule
+    ExpensesRoutingModule,
+    MatListModule,
+    MatCardModule,
+    MatGridListModule,
+    MatIconModule,
+    MatProgressBarModule
   ],
-  declarations: [ExpenseViewComponent]
+  declarations: [ExpenseViewComponent, ColorTypePipe]
 })
 export class ExpensesModule { }

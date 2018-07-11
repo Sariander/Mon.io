@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-savings-view',
@@ -39,18 +40,22 @@ export class SavingsViewComponent implements OnInit {
       ]
     },
   ];
-  constructor() {
+  constructor(private _router : Router, private _route: ActivatedRoute) {
 
   }
 
   ngOnInit() {
   }
 
+  OnSavingsCategoryClick(category : SavingsCategory) {
+    this._router.navigate(['details'], { relativeTo: this._route});
+  }
+
 }
 
 export class SavingsCategory {
   name: string;
-  value;
+  value : number;
   details: YearData[];
 }
 

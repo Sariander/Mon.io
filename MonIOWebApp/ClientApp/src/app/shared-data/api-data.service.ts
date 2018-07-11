@@ -16,7 +16,7 @@ export class ApiDataService {
     //call fetches on our dataStore objects
     //(when we get an API)
     //test purposes only. Remove when service is created.
-    setTimeout(() => {this.loadHomeData(100, 100, 100)}, 2000);
+    setTimeout(() => {this.loadHomeData(100, 100, 100)}, 1000);
   }
 
   //instantiate our observables here

@@ -5,7 +5,17 @@
     margin-bottom: 10px;
     min-width: 200px;
     width: 75%;
-  }
+}
+
+.income-card {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.budget-card {
+    padding-top: 16px;
+    padding-bottom: 8px;
+}
 
 @media only screen and (max-width: 1800px){
     .home-card {
@@ -22,6 +32,18 @@
 @media only screen and (max-width: 920px){
     .home-card {
         width: 85%;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .webOnly {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 601px){
+    .mobileOnly {
+        display: none;
     }
 }
 
